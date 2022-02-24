@@ -16,16 +16,17 @@ from pretty_html_table import build_table
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# Read in excel file
+# # Read in excel file
 # base_path = "C:\\Users\\"
 # filetypes = (('All files', '*.*'),
 #              ('Excel files', '*.xlsx'))
 # # show the open file dialog
 # f = fd.askopenfile(initialdir=base_path, filetypes=filetypes)
+# df_constants = pd.read_excel(f.name, engine="openpyxl")
 # f.close()
 
 f = __file__.rsplit("/", 2)[0] + "/alert_reporting_constants.xlsx"
-if ".py" in __file__:
+if ".py" in f:
     f = __file__.rsplit("\\", 2)[0] + "\\alert_reporting_constants.xlsx"
 df_constants = pd.read_excel(f, engine="openpyxl")
 
